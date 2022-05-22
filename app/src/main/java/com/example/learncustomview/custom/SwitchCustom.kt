@@ -11,10 +11,16 @@ import com.example.learncustomview.R
 class SwitchCustom(context: Context, attrs: AttributeSet) : FrameLayout(context, attrs) {
 
     init {
-        setOnClickListener {
-            isSelected = !it.isSelected
-        }
         LayoutInflater.from(getContext()).inflate(R.layout.view_custom_switch, this)
+    }
+
+    fun init(
+        onSelect: ((Boolean) -> Unit)? = null
+    ){
+        this.setOnClickListener {
+            isSelected = !it.isSelected
+            onSelect?.invoke(isSelected)
+        }
     }
 
     override fun setSelected(selected: Boolean) {
