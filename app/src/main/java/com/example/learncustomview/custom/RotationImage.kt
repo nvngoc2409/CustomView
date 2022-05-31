@@ -1,6 +1,7 @@
 package com.example.learncustomview.custom
 
 import android.animation.ObjectAnimator
+import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Canvas
 import android.util.AttributeSet
@@ -8,11 +9,12 @@ import android.view.animation.LinearInterpolator
 import androidx.appcompat.widget.AppCompatImageView
 import com.example.learncustomview.R
 
+@SuppressLint("Recycle", "CustomViewStyleable")
 class RotationImage(context: Context, attrs: AttributeSet) : AppCompatImageView(context, attrs) {
     private var _animator: ObjectAnimator? = null
 
     init {
-        setImageResource(R.drawable.sun)
+//            setImageResource(R.drawable.sun)
     }
 
     override fun onDraw(canvas: Canvas?) {

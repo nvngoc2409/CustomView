@@ -14,4 +14,13 @@
         <attr name="setProcess" format="float"/>
 
     </declare-styleable>
+
+    <declare-styleable name="TimerView">
+        <attr name="progressBackgroundColor" format="color" />
+        <attr name="progressStrokeColor" format="color" />
+        <attr name="strokeWidth" format="dimension" />
+        <attr name="android:textColor" />
+        <attr name="textFont" format="reference" />
+        <attr name="android:textSize" />
+    </declare-styleable>
 </resources>
