@@ -9,17 +9,17 @@ import android.view.animation.LinearInterpolator
 import androidx.appcompat.widget.AppCompatImageView
 import com.example.learncustomview.R
 
+/**
+ * Created by Linh Pham on 5/31/2022.
+ **/
 @SuppressLint("Recycle", "CustomViewStyleable")
 class RotationImage(context: Context, attrs: AttributeSet) : AppCompatImageView(context, attrs) {
     private var _animator: ObjectAnimator? = null
 
     init {
-//            setImageResource(R.drawable.sun)
+        setImageResource(R.drawable.sun)
     }
 
-    override fun onDraw(canvas: Canvas?) {
-        super.onDraw(canvas)
-    }
 
     override fun onDetachedFromWindow() {
         super.onDetachedFromWindow()
@@ -31,7 +31,7 @@ class RotationImage(context: Context, attrs: AttributeSet) : AppCompatImageView(
         createAnimationRotation()
     }
 
-    private fun createAnimationRotation(){
+    private fun createAnimationRotation() {
         _animator = ObjectAnimator.ofFloat(this, "rotation", 0f, -360f)
         _animator?.repeatCount = ObjectAnimator.INFINITE
         _animator?.interpolator = LinearInterpolator()
@@ -39,7 +39,7 @@ class RotationImage(context: Context, attrs: AttributeSet) : AppCompatImageView(
         _animator?.start()
     }
 
-    private fun cancelAnimation(){
+    private fun cancelAnimation() {
         _animator?.cancel()
     }
 }

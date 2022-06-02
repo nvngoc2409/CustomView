@@ -19,27 +19,13 @@
         app:setColorProcess="#34988F"
         app:setProcess="0" />
 
-    <com.example.learncustomview.custom.SeekbarCustom
-        android:id="@+id/seekbar"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/circleProgressbar" />
 
-    <com.example.learncustomview.custom.SeekbarCustom2
-        android:id="@+id/seekbarCustom2"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/seekbar" />
-
-
-    <com.example.learncustomview.custom.SwitchCustom
-        android:id="@+id/switchCustom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <com.example.learncustomview.animation.springAnimation.SunAnimationSpring
+        android:id="@+id/viewAnimation"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/seekbarCustom2"/>
+        app:layout_constraintTop_toBottomOf="@+id/circleProgressbar" />
 </androidx.constraintlayout.widget.ConstraintLayout>

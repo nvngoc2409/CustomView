@@ -42,4 +42,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
 
+    //animation physics
+    implementation("androidx.dynamicanimation:dynamicanimation:1.0.0")
+
 }

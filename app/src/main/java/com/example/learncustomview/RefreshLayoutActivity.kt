@@ -15,7 +15,7 @@ class RefreshLayoutActivity : AppCompatActivity(), SwipeRefreshLayout.OnRefreshL
     }
 
     override fun onRefresh() {
+        refreshLayout.invalidate()
         Toast.makeText(this, "Refresh", Toast.LENGTH_LONG).show()
-        Handler().postDelayed({refreshLayout.isRefreshing = false}, 3000)
     }
 }
