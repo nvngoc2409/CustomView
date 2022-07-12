@@ -52,6 +52,7 @@ class CircleProgressbar(context: Context, attributes: AttributeSet) : View(conte
         innitPainProgress()
         innitPainControlProgress()
         innitPaintLine()
+
     }
 
 
@@ -149,6 +150,7 @@ class CircleProgressbar(context: Context, attributes: AttributeSet) : View(conte
             )
             drawLine(centerX, centerY,controlCircleX, controlCircleY, paintLine)
             drawCircle(controlCircleX, controlCircleY, 60f, paintControlProgressbar)
+
         }
     }
 
