@@ -45,9 +45,10 @@ class SunAnimationSpring(context: Context, attrs: AttributeSet) : View(context, 
             }
 
             MotionEvent.ACTION_UP -> {
-                centerX = 0
-                centerY = 0
-                invalidate()
+//                centerX = 0
+//                centerY = 0
+//                invalidate()
+                initSpringAnimation()
                 return true
             }
 
@@ -76,6 +77,10 @@ class SunAnimationSpring(context: Context, attrs: AttributeSet) : View(context, 
             spring.stiffness = SpringForce.STIFFNESS_LOW
             start()
         }
+    }
+
+    private fun setDefaultLocationView(){
+        
     }
 
 }
