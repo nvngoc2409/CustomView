@@ -2,8 +2,8 @@ package com.example.learncustomview
 
 import android.annotation.SuppressLint
 import android.media.MediaPlayer
-import android.net.Uri
 import android.os.Bundle
+import android.util.DisplayMetrics
 import android.view.MotionEvent
 import android.view.View
 import android.widget.ImageView
@@ -16,10 +16,12 @@ import androidx.dynamicanimation.animation.SpringForce
 
 class MainActivity : AppCompatActivity() {
     private val imvBall : ImageView by lazy { findViewById(R.id.imvBall) }
+    private val layout : ImageView by lazy { findViewById(R.id.imvBall) }
     private var dX = 0f
     private var dY = 0f
 
     private val animation by lazy(LazyThreadSafetyMode.NONE) { createSpringAnimation(imvBall, DynamicAnimation.Y) }
+    private val animationX by lazy(LazyThreadSafetyMode.NONE) { createSpringAnimation(imvBall, DynamicAnimation.X) }
 
     @SuppressLint("ClickableViewAccessibility")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,7 +33,12 @@ class MainActivity : AppCompatActivity() {
                 MotionEvent.ACTION_UP -> {
                     val newX = event.rawX + dX
                     val newY = event.y
-                    animation.animateToFinalPosition(newY + imvBall.height)
+                    val displayMetrics = DisplayMetrics()
+                    windowManager.defaultDisplay.getMetrics(displayMetrics)
+                    val height = displayMetrics.heightPixels
+                    val width = displayMetrics.widthPixels
+                    animation.animateToFinalPosition(height/2f - view.height/2)
+                    animationX.animateToFinalPosition(width/2f - view.width/2)
                     playMusicAnimation()
                 }
 
